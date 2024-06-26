@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Upadet_receipe</title>
+</head>
+<body>
+    <div >
+        <h2>Add Receipe</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label>Receipe name</label>
+                <input type="text" name="receipe_name" required>
+            </div>
+            <div>
+                <label>Receipe description</label>
+                <textarea name="description"></textarea>
+            </div>
+            <div>
+                <label>Receipe image</label>
+                <input type="file" name="image" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // username - divyanshu, password - dubey
+    </script>
+</body>
+</html>
