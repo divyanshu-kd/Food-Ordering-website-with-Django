@@ -10,29 +10,13 @@
 </head>
 <body>
     <a>{{request.user.username}}</a>
-    <div >
-        {% if request.user.is_authenticated %}
-            <a href="/logout/" type="submit">Logout</a>
-        {% else %}
-            <a href="/login/" type="submit">Login</a>
-        {% endif %}
-        <h2>Add Receipe</h2>
+    <div class="flex flex-col justify-center">
         <form method="POST" enctype="multipart/form-data" class="w-screen flex justify-center">
             {% csrf_token %}
-            <!-- <div>
-                <label>Receipe name</label>
-                <input type="text" name="receipe_name" required>
-            </div>
-            <div>
-                <label>Receipe description</label>
-                <textarea name="description"></textarea>
-            </div>
-            <div>
-                <label>Receipe image</label>
-                <input type="file" name="image" required>
-            </div>
-            <button type="submit">Submit</button> -->
-            <div class="content-center w-1/2 border-2 p-8">
+            <div class="flex flex-col w-1/2 border-2 p-8">
+                <din class="mb-3 border-2 text-center p-2">
+                    <h2>Add Receipe</h2>
+                </din>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Receipe name</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Receipe name" name="receipe_name" required>
@@ -46,7 +30,7 @@
                     <label for="formGroupExampleInput2" class="form-label">Another label</label>
                     <input type="file" class="form-control" id="formGroupExampleInput2" placeholder="Place the image of the receipe" name="image" required>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
         {% for item in receipe %}
