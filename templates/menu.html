@@ -19,7 +19,7 @@
         <h2>Add Receipe</h2>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div>
+            <!-- <div>
                 <label>Receipe name</label>
                 <input type="text" name="receipe_name" required>
             </div>
@@ -31,19 +31,23 @@
                 <label>Receipe image</label>
                 <input type="file" name="image" required>
             </div>
-            <button type="submit">Submit</button>
-            <!-- <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Receipe name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            <button type="submit">Submit</button> -->
+            <div class="justify-content w-1/2">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Receipe name</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Receipe name" name="receipe_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Receipe description</label>
+                    <textarea name="description" class="form-control"></textarea>
+                    <!-- <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder"> -->
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Another label</label>
+                    <input type="file" class="form-control" id="formGroupExampleInput2" placeholder="Place the image of the receipe" name="image" required>
+                </div>
+                <button type="submit">Submit</button>
             </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Receipe description</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Another label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-            </div> -->
         </form>
         {% for item in receipe %}
         <a href="/delete-receipe/{{item.id}}/"> delete </a>
