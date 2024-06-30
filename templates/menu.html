@@ -17,7 +17,7 @@
             <a href="/login/" type="submit">Login</a>
         {% endif %}
         <h2>Add Receipe</h2>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" class="w-screen flex justify-center">
             {% csrf_token %}
             <!-- <div>
                 <label>Receipe name</label>
@@ -32,7 +32,7 @@
                 <input type="file" name="image" required>
             </div>
             <button type="submit">Submit</button> -->
-            <div class="justify-content w-1/2">
+            <div class="content-center w-1/2 border-2 p-8">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Receipe name</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Receipe name" name="receipe_name" required>
