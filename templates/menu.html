@@ -32,10 +32,33 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
-        {% for item in receipe %}
-        <a href="/delete-receipe/{{item.id}}/"> delete </a>
-        <a href="/update-receipe/{{item.id}}/"> update </a>
-        {% endfor %}
+        <div class="flex justify-center m-4">
+            <table class="table table-bordered w-2/3">
+                <thead>
+                    <tr>
+                        <th scope="col">S. no.</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Update/Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in receipe %}
+                    <tr>
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.receipe_description}}</td>
+                        <td><img src="/media/{{item.receipe_image}}"></td>
+                        <td>
+                            <div class="flex flex-col">
+                                <a class="btn mb-1" href="/delete-receipe/{{item.id}}/"> Delete </a>
+                                <a class="btn " href="/update-receipe/{{item.id}}/"> Update </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
     <script>
         // username - divyanshu, password - dubey
