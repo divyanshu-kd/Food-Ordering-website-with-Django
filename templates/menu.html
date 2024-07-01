@@ -37,8 +37,9 @@
                 <thead>
                     <tr>
                         <th scope="col">S. no.</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
+                        <th scope="col">Receipe Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Receipe Image</th>
                         <th scope="col">Update/Delete</th>
                     </tr>
                 </thead>
@@ -46,12 +47,13 @@
                     {% for item in receipe %}
                     <tr>
                         <th scope="row">{{item.id}}</th>
+                        <td>{{item.receipe_name}}</td>
                         <td>{{item.receipe_description}}</td>
                         <td><img src="/media/{{item.receipe_image}}"></td>
-                        <td>
-                            <div class="flex flex-col">
-                                <a class="btn mb-1" href="/delete-receipe/{{item.id}}/"> Delete </a>
-                                <a class="btn " href="/update-receipe/{{item.id}}/"> Update </a>
+                        <td class="w-20">
+                            <div class="flex flex-col justify-content">
+                                <a class="btn btn-outline-danger mb-2" href="/delete-receipe/{{item.id}}/"> Delete </a>
+                                <a class="btn btn-outline-success " href="/update-receipe/{{item.id}}/"> Update </a>
                             </div>
                         </td>
                     </tr>
