@@ -89,5 +89,5 @@ def signup_page(request):
 
         messages.info(request, 'Account created Successfully')
 
-        return redirect('/signup/')
+        return redirect('/login/')
     return render(request, 'signup.html')
